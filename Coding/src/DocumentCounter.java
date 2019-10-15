@@ -1,4 +1,6 @@
 public class DocumentCounter {
+	
+	/* Class and service to count documents */
 
     public static class Counter {
         private int count = 0;

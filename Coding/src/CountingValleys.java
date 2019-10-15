@@ -8,7 +8,7 @@ import java.util.regex.*;
 
 public class CountingValleys {
 
-    // Complete the countingValleys function below.
+    /* Function to count valleys. D is downstep, U is upstep. Starting point is 0, Valley is area under 0 */
     static int countingValleys(int n, String s) {
     	int valleyCount=0, level=0;
     	for(int index1=0;index1<n;index1++) {
