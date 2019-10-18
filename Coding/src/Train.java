@@ -1,6 +1,8 @@
 import java.util.Hashtable;
 import java.util.function.Function;
 
+/* Implementation of train to print Wagon and cargo info */
+
 public class Train {
     private Hashtable<Integer, Integer> wagons;
 

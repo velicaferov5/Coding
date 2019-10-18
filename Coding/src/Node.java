@@ -1,4 +1,6 @@
-class Node {
+/* Node class to form tree and calculate its height recursively */
+
+public class Node {
     private Node leftChild, rightChild;
     
     public Node(Node leftChild, Node rightChild) {
@@ -20,7 +22,7 @@ class Node {
     	
         else
         { 
-            // calculate the depth of each subtree
+            // calculates the depth of each subtree
         	int leftHeight = 0;
         	int rightHeight = 0;
         	
@@ -30,7 +32,7 @@ class Node {
             if(this.rightChild!=null)
             	rightHeight = this.rightChild.height(); 
    
-            // return larger one
+            // returns larger one
             if (leftHeight > rightHeight) 
                 return (leftHeight + 1); 
              else 

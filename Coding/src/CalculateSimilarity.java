@@ -1,5 +1,3 @@
-
-
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -14,7 +12,7 @@ import static java.util.stream.Collectors.toList;
 
 /* Program calculates similarity between texts */
 
-class Result {
+public class CalculateSimilarity {
 
 	public static String calculateScore(String text, String prefixString, String suffixString) {
 
@@ -29,6 +27,7 @@ class Result {
 				limitReached = true;
 			}
 		}
+		
 		int suffixIndex=0;
 		limitReached = false;
 

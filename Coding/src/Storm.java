@@ -1,4 +1,7 @@
-class Storm{
+/* Classes calculating distance and eye radius, positions for storms.
+ * Exemplary implementation of inheritance */
+
+public class Storm{
     protected double eyeRadius;
     protected double eyePositionX;
     protected double eyePositionY;

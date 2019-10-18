@@ -1,8 +1,8 @@
+/* Class and function to count documents */
+
 public class DocumentCounter {
 	
-	/* Class and service to count documents */
-
-    public static class Counter {
+    public class Counter {
         private int count = 0;
         private int increment;
 
@@ -16,8 +16,9 @@ public class DocumentCounter {
         }
     }
 
-    public static class DocumentNameCreator {
-        private static String prefix;
+    public class DocumentNameCreator {
+        private String prefix;
+        
         DocumentCounter counter = new DocumentCounter();
         
         public DocumentNameCreator(int increment, String prefix) {

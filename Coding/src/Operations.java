@@ -4,8 +4,10 @@ import java.util.Collections;
 
 public class Operations {
 
-    public int findLargestSibling(int N) {
-        // write your code in Java SE 8
+	/* findLargestSibling method to calculate maximum number can be formed from digits of number (siblings) */
+	public int findLargestSibling(int N) {
+		
+		/* input number is converted to characters, added to numberList<> and sorted in descending order */
         String strN = Integer.toString(N);
         ArrayList<Integer> numberList = new ArrayList<Integer>();
         for(int index1=0;index1<strN.length()-1;index1++) {
@@ -13,7 +15,8 @@ public class Operations {
         	numberList.add(digit);
         }
         Collections.sort(numberList);
-
+        
+        /* Maximum sibling is obtained by calculating value of numberList<> */
         int maxNumber=0;
         int decimalPoints=1;
         for(int index1=0;index1<numberList.size();index1++) {
@@ -24,8 +27,9 @@ public class Operations {
         return maxNumber;
     }
     
+	/* widesPath() method to calculate widest path (X margin) between 2 points in XY graph */
     public int widestPath(int[] X, int[] Y) {
-        // write your code in Java SE 8
+
     	Arrays.sort(X);
     	int widestPath=1;
     	for(int index1=0;index1<X.length-1;index1++) {
