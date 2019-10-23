@@ -9,7 +9,7 @@ public class AlaadinsJourney {
 	public int optimalPoint(List<Integer> magic, List<Integer> dist) {
 
     	int N = magic.size();
-    	for(int index1=0;index1<N;index1++) {
+    	for(int index1=0; index1<N; index1++) {
     		int steps=0;
     		int magicLeft=magic.get(index1);
     		int previousIndex=index1;
