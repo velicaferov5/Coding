@@ -67,4 +67,43 @@ public class Operations {
     	
     	return widestPath;
     }
+    
+    /* stepsToEliminate method calculates required number of steps to reach 0 from decimal value of input binary by dividing by 2 if it is even, subtracting 1 if it is odd */
+    public int stepsToEliminateBinary(String input) {
+    	int decimal = binaryToDecimal(input);
+    	int steps=0;
+    	while(decimal>0) {
+    		if(decimal%2 == 0)
+    			decimal/=2;
+    		else decimal--;
+    		steps++;
+    	}
+    	return steps;
+    }
+    
+    //Method converts binary input to decimal
+    public int binaryToDecimal(String binary) {
+    	int decimal = 0;
+    	int indexPower=1;
+    	for(int index1=binary.length()-1; index1>=0; index1--) {
+    		int digit = Integer.parseInt(binary.substring(index1,index1+1));
+    		decimal+=indexPower*digit;
+    		indexPower*=2;
+    	}
+    	return decimal;
+    }
+
+	// Method counts identical pairs in input Array (A[P]=A[Q] where P<Q<A.length)
+    public int countIdenticalPairs(int[] A) {
+    	int identicalPairs = 0;
+    	
+    	/* Number of identical pairs is calculated by looping over A[] and comparing each index with bigger indexes */
+    	for(int index1=0; index1<A.length-1; index1++) {
+    		for(int index2=index1+1; index2<A.length; index2++) {
+    			if(A[index1] == A[index2])
+    				identicalPairs++;
+    		}
+    	}
+		return identicalPairs;
+    }
 }
