@@ -2,26 +2,28 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Multiple {	
+public class Reservations {	
 	
-	public static List<Integer> missingReservations(List<List<Integer>> firstReservationList, List<List<Integer>> secondReservationList) {
-	    // Write your code here
+	/* Following method gives list of reservations existing in secondReservationList but missing in first
+	 * first line in input lists is number of reservations, second is number of spaces (always 2) and rest is lists of reservations and time-stamps 
+	 *  */
+	public List<Integer> missingReservations(List<List<Integer>> firstReservationList, List<List<Integer>> secondReservationList) {
+	   
 		List<Integer> missingReservationList = new ArrayList<Integer>();
 		
 		int N = firstReservationList.get(0).get(0);
 		int M = secondReservationList.get(0).get(0);
 		
-		Integer[] missingReservations = new Integer[M-2];
-		Integer[] missingStamps = new Integer[M-2];
+		Integer[] missingReservations = new Integer[M-N];
+		Integer[] missingStamps = new Integer[M-N];
 		
-		int index1=2;
-		while(index1<M) {
+		for(int index1=0; index1<M+2; index1++) {
 			boolean reservationExist=false;
-			int index2=2;
-			while(index2<N) {
+			int index2=0;
+			while(index2<N+2) {
 				if(secondReservationList.get(index1).get(0).equals(firstReservationList.get(index2).get(0))) {
 					reservationExist = true;
-					index2=N-1;
+					index2=N+1;
 				}
 				index2++;
 			}
@@ -44,11 +46,6 @@ public class Multiple {
 					missingStamps[index4] = temp;
 				}
 			}
-		}
-		
-		for(int index5=0; index5< missingReservations.length; index5++) {
-			if(missingReservations[index5]!=null)
-				missingReservationList.add(missingReservations[index5]);
 		}
 		
 		return missingReservationList;
