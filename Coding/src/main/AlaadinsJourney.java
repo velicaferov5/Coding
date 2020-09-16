@@ -1,3 +1,4 @@
+package main;
 import java.util.List;
 
 /* Alaadin loses as much magic as the distance. He needs to make a full cycle by walking through points and to return starting point.

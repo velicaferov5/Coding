@@ -1,13 +1,19 @@
-
-/* There are apple trees in farm. A[] indicates number of apples in sequential trees.
- * maxApples function to find maximum number of apples can be collected from sequential trees of Alice and Bob
- * that don't intersect with each other */
+package main;
 
 class Farm {
+	
+	/**
+	 * Finds maximum number of apples can be collected from sequential trees of Alice and Bob that
+	 * don't intersect with each other
+	 * 
+	 * @param A number of apples in sequential trees
+	 * @param K
+	 * @param L
+	 * @return maximum number of apples
+	 */
     public int maxApples(int[] A, int K, int L) {
         
     	// Declaring arrays with size 2 to indicate Alice and Bob's start and end indexes
-    	
     	if(K+L>A.length)
     		return -1;
 

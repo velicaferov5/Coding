@@ -1,3 +1,4 @@
+package main;
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -7,9 +8,15 @@ import java.util.concurrent.*;
 import java.util.regex.*;
 
 public class CountingValleys {
-
-/* Function to count valleys. D is downstep, U is upstep. Starting point is 0, Valley is area under 0 */
-	
+    private static final Scanner scanner = new Scanner(System.in);
+    
+	/**
+	 * Counts valleys. D is downstep, U is upstep. Starting point is 0, Valley is area under 0
+	 * 
+	 * @param n
+	 * @param s
+	 * @return number of valleys
+	 */
     public int countingValleys(int n, String s) {
     	int valleyCount=0, level=0;
     	for(int index1=0;index1<n;index1++) {
@@ -25,8 +32,6 @@ public class CountingValleys {
     	}
     	return valleyCount;
     }
-
-    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));

@@ -1,14 +1,16 @@
+package main;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* Class and methods to sort names with their roman number order in "Name Roman_number""
- * 1. Sorting all names in ascending order
- * 2. Sorting same names in ascending order according to roman number */
-
 public class SortNames {
 
-	/* Primary function to sort names and roman numbers. Input list, output list. */
+	/**
+	 * Sorts Roman names.
+	 * 
+	 * @param names
+	 * @return list of sorted names
+	 */
     public static List<String> sortRoman(List<String> names) {
 
     	int N=names.size();
@@ -17,19 +19,17 @@ public class SortNames {
     	String[] justNames = new String[N];
     	String[] romanNumbers = new String[N];
     	
-    	/* splitting names and roman number to order */
-    	
+    	// Split names and Roman number to order
     	for(int index1=0; index1<N; index1++) {
     		String[] currentName = names.get(index1).split(" ");
     		justNames[index1] = currentName[0];
     		romanNumbers[index1] = currentName[1];
     	}
     	
-    	/* Roman numbers converted to standard numbers and assigned. */
+    	// Roman numbers converted to standard numbers and assigned.
     	int[] numbers = toNumbers(romanNumbers);
     	
-    	/* Sorting same names according to their numbers */
-    	
+    	// Sort same names according to their numbers
     	int index1=0;
     	while(index1<N-1) {
     		int index2=index1+1;
@@ -67,19 +67,23 @@ public class SortNames {
     	return numbers;
     }
     
-    /* Method to convert Roman number to standard number. Input String, output int */
-    
-    public static int toNumber(String roman) {
+    /**
+     * Converts {@param romanNumber} to standard number.
+     * 
+     * @param romanNumber
+     * @return standard number
+     */
+    public static int toNumber(String romanNumber) {
  
         int number = 0; 
 
-        for (int index1=0; index1<roman.length(); index1++) 
+        for (int index1=0; index1<romanNumber.length(); index1++) 
         { 
-            int first = romanCharacterToNumber(roman.substring(index1,index1+1)); 
+            int first = romanCharacterToNumber(romanNumber.substring(index1,index1+1)); 
       
-            if (index1+1 < roman.length()) 
+            if (index1+1 < romanNumber.length()) 
             { 
-                int second = romanCharacterToNumber(roman.substring(index1+1,index1+2)); 
+                int second = romanCharacterToNumber(romanNumber.substring(index1+1,index1+2)); 
       
                 if (first >= second) 
                 { 
@@ -100,10 +104,14 @@ public class SortNames {
         return number; 
     }
     
-    /* Method to convert roman character to number. Input String, output int */
-    
-	public static int romanCharacterToNumber(String letter) {
-		switch(letter) {
+    /**
+     * Converts {@param romanLetter} to number.
+     * 
+     * @param romanLetter
+     * @return standard number
+     */
+	public static int romanCharacterToNumber(String romanLetter) {
+		switch(romanLetter) {
 			case "I": return 1;
 			case "X": return 10;
 			case "L": return 50;

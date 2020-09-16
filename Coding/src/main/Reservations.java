@@ -1,12 +1,18 @@
+package main;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Reservations {	
 	
-	/* Following method gives list of reservations existing in secondReservationList but missing in first
-	 * first line in input lists is number of reservations, second is number of spaces (always 2) and rest is lists of reservations and time-stamps 
-	 *  */
+	/**
+	 * Finds list of reservations existing in secondReservationList but missing in first.
+	 * 1st values in input lists is number of reservations, 2nd is number of spaces (always 2) and rest are reservations and time-stamps
+	 * 
+	 * @param firstReservationList
+	 * @param secondReservationList
+	 * @return list of missing reservations
+	 */
 	public List<Integer> missingReservations(List<List<Integer>> firstReservationList, List<List<Integer>> secondReservationList) {
 	   
 		List<Integer> missingReservationList = new ArrayList<Integer>();
@@ -49,6 +55,5 @@ public class Reservations {
 		}
 		
 		return missingReservationList;
-	}
-	
+	}	
 }

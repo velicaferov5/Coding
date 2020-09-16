@@ -1,14 +1,18 @@
+package main;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import java.util.Optional;
 
-/* Class and function to calculate first and most occurring character in text */
-
 public class MaximumOccurringCharacter {
+	/**
+	 * Calculates first and most occurring character in {@param text}
+	 * 
+	 * @param text
+	 * @return 1st and most occurring char
+	 */
     public char maximumOccurringCharacter(String text) {
 
-    	/* LinkedHashMap<> is used to put and get Strings (1 character) and their occurrences in order  */
-
+    	// LinkedHashMap<> is to put and get Strings (1 character) and their occurrences in order
     	LinkedHashMap<String, Integer> occurenceMap = new LinkedHashMap<String, Integer>(); 
     	for(int index1=0;index1<text.length()-1;index1++) {
     		String character = text.substring(index1,index1+1);

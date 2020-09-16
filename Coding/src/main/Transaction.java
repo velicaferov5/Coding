@@ -1,9 +1,14 @@
+package main;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* Class to find special bakery packs and their prices */
+/**
+ * Transaction class to find special bakery packs and their prices.
+ * 
+ * @author vjafarov
+ */
 
 public class Transaction {
 		

@@ -1,14 +1,19 @@
+package main;
 import java.util.ArrayList;
 import java.util.List;
 
-/* PackNumbers class and methods to pack sequentially duplicate numbers in Number:sequence and rest just number format */
-
 public class PackNumbers {
 
+	/**
+	 * Packs sequentially same numbers in Number:Sequence format and rest not formatted
+	 * 
+	 * @param arr
+	 * @return packed list of numbers
+	 */
     public List<String> packNumbers(List<Integer> arr) {
     	List<String> packedList = new ArrayList<String>();
     	
-    	/* numbers added to packedList thorugh while loop */
+    	// Add numbers to packedList via while loop
     	Integer index1=0;
     	while(index1<arr.size()-1) {
     		Integer number = arr.get(index1);
@@ -34,24 +39,32 @@ public class PackNumbers {
     	return packedList;
     }
 
-    /* Alternative and shorter method for same functionality */
-    
+    /**
+     * Shorter alternative of {@link packNumbers()}
+     * 
+     * @param arr
+     * @return packed list of numbers
+     */
     public List<String> packNumbers_alternative(List<Integer> arr) {
         List<String> packedList = new ArrayList<String>();
         
-        for(int index1=0;index1<arr.size()-1;index1++) {
-            int number = arr.get(index1);
+        for (int index=0; index<arr.size()-1; index++) {
+            int number = arr.get(index);
             int sequence=1;
             
-            while(index1<arr.size()-1 && arr.get(index1)==arr.get(index1+1)) {
+            // Iterate over loop to pack same numbers
+            while (index<arr.size()-1 && arr.get(index).equals(arr.get(index+1))) {
                 sequence++;
-                index1++;
+                index++;
             }
-            if(sequence>1) {
+            if (sequence>1) {
                 packedList.add(number+":"+sequence);
-            }
-            else {
+            } else {
                 packedList.add(Integer.toString(number));
+                // Add last not same element
+                if (index==arr.size()-2) {
+                    packedList.add(Integer.toString(arr.get(arr.size()-1)));
+                }
             }
         }
         return packedList;

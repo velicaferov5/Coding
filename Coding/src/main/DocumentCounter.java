@@ -1,5 +1,11 @@
-/* Class and function to count documents */
+package main;
 
+/**
+ * Counts documents
+ * 
+ * @author vjafarov
+ *
+ */
 public class DocumentCounter {
 	
     public class Counter {

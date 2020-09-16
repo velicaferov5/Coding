@@ -1,3 +1,4 @@
+package main;
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -14,6 +15,14 @@ import static java.util.stream.Collectors.toList;
 
 public class CalculateSimilarity {
 
+	/**
+	 * Calculates similarity score of text strings
+	 * 
+	 * @param text
+	 * @param prefixString
+	 * @param suffixString
+	 * @return largest common text
+	 */
 	public static String calculateScore(String text, String prefixString, String suffixString) {
 
 		int prefixIndex=suffixString.length();

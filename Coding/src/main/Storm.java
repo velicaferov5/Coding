@@ -1,11 +1,21 @@
-/* Classes calculating distance and eye radius, positions for storms.
- * Exemplary implementation of inheritance */
-
+package main;
+/**
+ * Classes calculating distance and eye radius, positions for storms via inheritance.
+ * 
+ * @author vjafarov
+ */
 public class Storm{
     protected double eyeRadius;
     protected double eyePositionX;
     protected double eyePositionY;
 
+    /**
+     * Calculates if storm is visible with eyes.
+     * 
+     * @param positionX
+     * @param positionY
+     * @return boolean
+     */
     public boolean isInEyeOfTheStorm(double positionX, double positionY) {
         double distance = Math.sqrt(Math.pow(positionX - eyePositionX, 2) +
                                     Math.pow(positionY - eyePositionY, 2));
