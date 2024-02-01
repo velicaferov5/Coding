@@ -1,15 +1,15 @@
 package main;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /** 
  * Various operations are performed via methods of the class.
  * 
  * @author vjafarov
  */
-public class Functions {
+public class Functions extends FindEUFloorNumber {
+
+	public static void main(String[] args) {
+	}
 
 	/**
 	 * Finds list of Integers from 1 to n that are
@@ -168,4 +168,71 @@ public class Functions {
         // (because there are 2 * (up-down) and/or 2* (right-left) useless movements)
         return 2 * (Math.min(stepCount[0], stepCount[1]) + Math.min(stepCount[2], stepCount[3]));
     }
+
+	public static int countPairs(List<Integer> numbers, int k) {
+		int length = numbers.size();
+
+		for (int index1=0; index1< length; index1++) {
+			for (int index2=index1+1; index2<length; index2++) {
+
+			}
+		}
+
+		Integer[] numberArray = new Integer[length];
+		numberArray = numbers.toArray(numberArray);
+		Set<Integer> pairSet = new HashSet<>();
+		for (int index1=0; index1<length-1; index1++) {
+			for (int index2=index1+1; index2<length; index2++) {
+				int dif = numberArray[index2] - numberArray[index1];
+				if (dif == k) {
+					pairSet.add(numberArray[index1]);
+				} else if (dif == -k) {
+					pairSet.add(numberArray[index2]);
+				}
+			}
+		}
+		return pairSet.size();
+	}
+
+	public static int countPairs2(List<Integer> numbers, int k) {
+		int length = numbers.size();
+		Integer[] numberArray = new Integer[length];
+		numberArray = numbers.toArray(numberArray);
+		Set<Integer> pairSet = new HashSet<>();
+		for (int index1=0; index1<length-1; index1++) {
+			for (int index2=index1+1; index2<length; index2++) {
+				int dif = numberArray[index2] - numberArray[index1];
+				if (dif == k) {
+					pairSet.add(numberArray[index1]);
+				} else if (dif == -k) {
+					pairSet.add(numberArray[index2]);
+				}
+			}
+		}
+		return pairSet.size();
+	}
+
+	public static int comparatorValue(List<Integer> a, List<Integer> b, int d) {
+		int lengthA = a.size();
+		Integer[] arrayA = new Integer[lengthA];
+		arrayA = a.toArray(arrayA);
+		int lengthB = b.size();
+		Integer[] arrayB = new Integer[lengthB];
+		arrayB = b.toArray(arrayB);
+		int comparators = 0;
+		for (int indexA=0; indexA<lengthA; indexA++) {
+			comparators++;
+			for (int indexB=0; indexB<lengthB; indexB++) {
+				if (Math.abs(arrayA[indexA]-arrayB[indexB]) <= d) {
+					comparators--;
+					break;
+				}
+			}
+		}
+		return comparators;
+	}
+
+	public static long getNumberOfOptions(List<Integer> priceOfJeans, List<Integer> priceOfShoes, List<Integer> priceOfSkirts, List<Integer> priceOfTops, int dollars) {
+
+	}
 }
