@@ -1,13 +1,13 @@
+package exercises;
+
+import java.util.List;
+
 /**
  * Each person wears a sticker indicating their initial position in the queue from  to .
  * Any person can swap with the near person directly in front of them, but they still wear their original sticker.
  * One person can swap at most two others.
  */
 class MinimumSteps {
-
-    getDifference(int value, int index) {
-        return value - index - 1;
-    }
 
     /**
      * The method calculates the minimum number of swaps that took place to get to a given @param q order.
@@ -47,6 +47,10 @@ class MinimumSteps {
         if (index2 == size + 1) {
             System.out.println("Too chaotic");
         }
+    }
+
+    int getDifference(int value, int index) {
+        return value - index - 1;
     }
 
 }
