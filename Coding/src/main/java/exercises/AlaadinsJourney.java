@@ -1,13 +1,12 @@
-package exercises;
-
 import java.util.List;
-
-/* Alaadin loses as much magic as the distance. He needs to make a full cycle by walking through points and to return starting point.
- * Following class and method finds first point (=most optimal) to make full cycle.
- * Returns -1 if full cycle not possible from any point */
 
 public class AlaadinsJourney {
 
+    /**
+     * Alaadin loses as much magic as the distance. He needs to make a full cycle by walking through points and to return starting point.
+     * Following class and method finds first point (=most optimal) to make full cycle.
+     * Returns -1 if full cycle not possible from any point
+     */
     public int optimalPoint(List<Integer> magic, List<Integer> dist) {
 
         int N = magic.size();
