@@ -1,4 +1,4 @@
-package main.exercises;
+package main.java.exercises;
 
 public class BinaryGap {
     /**

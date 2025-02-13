@@ -1,6 +1,6 @@
-package main.exercises;
+package main.java.exercises;
 
-import main.utils.CollectionUtils;
+import main.java.utils.CollectionUtils;
 
 import java.util.List;
 
